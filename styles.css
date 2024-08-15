@@ -15,28 +15,17 @@ body {
   background-color: #46b3df;
 }
 
-/* Для Chrome и Safari */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Для Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
-/* Для IE и Edge */
-input[type="number"]::-ms-clear {
-  display: none;
-}
-
 .trainer {
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100vh;
+}
+
+.trainer__main {
+  display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 50px auto 20px;
+  margin-top: 12%;
 }
 
 .factor-one, .factor-two, .result {
@@ -51,24 +40,22 @@ input[type="number"]::-ms-clear {
 .result {
   width: 125px;
   padding: 0 10px;
-  font-size: 60px;
+  font-size: 54px;
   color: #fff;
   background-color: transparent;
   border: 3px solid #fff;
   border-radius: 5px;
+  overflow: hidden;
   text-align: center;
 }
 
-.result:focus {
-  outline: none;
-}
-
 .check-button__wrapper {
+  margin-bottom: 30px;
   text-align: center;
 }
 
 .check-button {
-  padding: 0 15px;
+  padding: 5px 25px;
   font-size: 40px;
   line-height: 1.2;
   color: #fff;
@@ -79,4 +66,22 @@ input[type="number"]::-ms-clear {
 
 .check-button:active {
   opacity: .6;
+}
+
+.digits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px 10px;
+  margin: 0 15px;
+}
+
+.digit {
+  flex: 1 1 15%;
+  padding: 10px 0;
+  font-size: 40px;
+  color: #555;
+  background-color: #e8eaed;
+  border-radius: 5px;
+  text-align: center;
 }
