@@ -16,11 +16,10 @@ body {
 }
 
 .trainer {
-  position: relative;
   display: flex;
-  height: 70vh;
   justify-content: center;
   align-items: center;
+  margin: 50px auto 20px;
 }
 
 .factor-one, .factor-two, .result {
@@ -47,9 +46,11 @@ body {
   outline: none;
 }
 
+.check-button__wrapper {
+  text-align: center;
+}
+
 .check-button {
-  position: absolute;
-  bottom: 120px;
   padding: 0 15px;
   font-size: 40px;
   line-height: 1.2;
