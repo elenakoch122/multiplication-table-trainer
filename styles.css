@@ -15,6 +15,23 @@ body {
   background-color: #46b3df;
 }
 
+/* Для Chrome и Safari */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Для Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Для IE и Edge */
+input[type="number"]::-ms-clear {
+  display: none;
+}
+
 .trainer {
   display: flex;
   justify-content: center;
