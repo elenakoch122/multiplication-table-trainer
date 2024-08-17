@@ -13,6 +13,12 @@ function init() {
   factor2.textContent = getRandomInt();
 }
 
+function initStyles() {
+  result.style.color = '#fff';
+  result.style.borderColor = '#fff';
+  result.textContent = '';
+}
+
 function createDigit(num) {
   const digit = document.createElement('div');
   digit.classList.add('digit');
@@ -30,16 +36,19 @@ check.addEventListener('click', () => {
   const b = +factor2.textContent;  
   
   if (a * b === +result.textContent) {
-    init();
-    result.textContent = '';
+    result.style.color = '#00e900';
+    result.style.borderColor = '#00e900';
+
+    setTimeout(() => {
+      initStyles();
+      init();
+    }, 500);
   } else {
     result.style.color = 'red';
     result.style.borderColor = 'red';
     
     setTimeout(() => {
-      result.style.color = '#fff';
-      result.style.borderColor = '#fff';
-      result.textContent = '';
+      initStyles();
     }, 1000);
   }
 });
