@@ -93,8 +93,8 @@ body {
 
 .digits__clear {
   position: absolute;
-  right: -25px;
-  bottom: -115px;
+  right: 0;
+  bottom: -102px;
   transition: .3s;
   cursor: pointer;
 }
