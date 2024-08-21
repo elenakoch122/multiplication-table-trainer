@@ -3,9 +3,10 @@ const factor2 = document.querySelector('.factor-two');
 const result = document.querySelector('.result');
 const check = document.querySelector('.check-button');
 const digits = document.querySelector('.digits');
+const clear = document.querySelector('.digits__clear');
 
 function getRandomInt() {
-  return Math.floor(Math.random() * 10 + 1);
+  return Math.floor(Math.random() * 8 + 2);
 }
 
 function init() {
@@ -51,6 +52,10 @@ check.addEventListener('click', () => {
       initStyles();
     }, 1000);
   }
+});
+
+clear.addEventListener('click', () => {
+  result.textContent = result.textContent.slice(0, -1);
 });
 
 for (let i = 1; i < 10; i++) {
