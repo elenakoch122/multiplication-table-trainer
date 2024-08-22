@@ -18,13 +18,21 @@ body {
 .trainer {
   width: 90vw;
   max-width: 500px;
-  margin: 15vh auto 5vh;
+  margin: 25vh auto 5vh;
 }
 
 .trainer__main {
   display: flex;
   justify-content: center;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
+  text-shadow:
+    5px 5px 20px #46b3df, -5px -5px 20px #46b3df,
+    5px 5px 20px #46b3df, -5px -5px 20px #46b3df,
+    5px 5px 20px #46b3df, -5px -5px 20px #46b3df,
+    5px 5px 20px #46b3df, -5px -5px 20px #46b3df,
+    5px 5px 20px #46b3df, -5px -5px 20px #46b3df,
+    5px 5px 20px #46b3df, -5px -5px 20px #46b3df,
+    5px 5px 20px #46b3df;
 }
 
 .factor-one, .factor-two, .result {
@@ -49,7 +57,7 @@ body {
 }
 
 .check-button__wrapper {
-  margin-bottom: 15vh;
+  margin-bottom: 10vh;
   line-height: 0;
   text-align: center;
 }
@@ -59,7 +67,7 @@ body {
   font-size: 40px;
   line-height: 1.2;
   color: #fff;
-  background-color: #13c413;
+  background-color: rgb(19 196 19 / 90%);
   border: 1px solid #07ad07;
   border-radius: 5px;
   transition: .3s;
@@ -84,7 +92,7 @@ body {
   padding: 10px 0;
   font-size: 40px;
   color: #555;
-  background-color: #e8eaed;
+  background-color: rgb(232 234 237 / 90%);
   border-radius: 5px;
   text-align: center;
   transition: .3s;
@@ -97,4 +105,36 @@ body {
   bottom: -102px;
   transition: .3s;
   cursor: pointer;
+  opacity: .9;
+}
+
+.counter {
+  position: absolute;
+  top: 2px;
+  left: 75%;
+  font-size: 14px;
+  color: #555;
+}
+
+.gifts {
+  z-index: -1;
+  position: absolute;
+  top: 17px;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gift {
+  animation: appearanceGift 1s cubic-bezier(.98, -0.07, .78, .36) forwards;
+}
+
+@keyframes appearanceGift {
+  from {
+    font-size: 300px;
+  }
+
+  to {
+    font-size: 24px;
+  }
 }

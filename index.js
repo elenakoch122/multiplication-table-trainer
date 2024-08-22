@@ -4,6 +4,9 @@ const result = document.querySelector('.result');
 const check = document.querySelector('.check-button');
 const digits = document.querySelector('.digits');
 const clear = document.querySelector('.digits__clear');
+const gifts = document.querySelector('.gifts');
+let counter = document.querySelector('.counter');
+let count = 5;
 
 function getRandomInt() {
   return Math.floor(Math.random() * 8 + 2);
@@ -32,6 +35,20 @@ function createDigit(num) {
   return digit;
 }
 
+function createGift() {
+  const gift = document.createElement('div');
+  gift.classList.add('gift');
+
+  fetch('https://emojihub.yurace.pro/api/random')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      data.htmlCode.forEach(i => gift.insertAdjacentHTML("beforeend", i));
+    });
+
+  return gift;
+}
+
 check.addEventListener('click', () => {
   const a = +factor1.textContent;
   const b = +factor2.textContent;  
@@ -39,10 +56,18 @@ check.addEventListener('click', () => {
   if (a * b === +result.textContent) {
     result.style.color = '#00e900';
     result.style.borderColor = '#00e900';
-
+    count--;
+    
     setTimeout(() => {
       initStyles();
       init();
+
+      if (count === 0) {
+        gifts.append(createGift());
+        count = 5;
+      }
+
+      counter.textContent = counter.textContent.slice(0, -1) + count;
     }, 500);
   } else {
     result.style.color = 'red';
@@ -57,6 +82,8 @@ check.addEventListener('click', () => {
 clear.addEventListener('click', () => {
   result.textContent = result.textContent.slice(0, -1);
 });
+
+counter.textContent += count;
 
 for (let i = 1; i < 10; i++) {
   digits.append(createDigit(i));
