@@ -6,7 +6,7 @@ const digits = document.querySelector('.digits');
 const clear = document.querySelector('.digits__clear');
 const gifts = document.querySelector('.gifts');
 let counter = document.querySelector('.counter');
-let count = 5;
+let count = 3;
 
 function getRandomInt() {
   return Math.floor(Math.random() * 8 + 2);
@@ -64,7 +64,7 @@ check.addEventListener('click', () => {
 
       if (count === 0) {
         gifts.append(createGift());
-        count = 5;
+        count = 3;
       }
 
       counter.textContent = counter.textContent.slice(0, -1) + count;
